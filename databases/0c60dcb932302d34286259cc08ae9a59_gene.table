@@ -1,0 +1,37 @@
+(dp1
+S'id'
+p2
+(dp3
+S'type'
+p4
+S'id'
+p5
+sS'sortable'
+p6
+I1
+sS'sql'
+p7
+S'INT AUTO_INCREMENT NOT NULL'
+p8
+ssS'name'
+p9
+(dp10
+g4
+S'string'
+p11
+sg6
+I2
+sg7
+S'VARCHAR(255) NOT NULL UNIQUE'
+p12
+ssS'genome'
+p13
+(dp14
+g4
+g11
+sg6
+I3
+sg7
+S'VARCHAR(255)'
+p15
+ss.

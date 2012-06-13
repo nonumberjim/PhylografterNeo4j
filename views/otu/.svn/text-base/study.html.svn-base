@@ -1,0 +1,7 @@
+{{extend 'layout.html'}}
+
+<div style="font-weight:bold; padding-bottom:1em; font-size:110%">
+{{=study_url}}: {{=N}} OTUs
+</div>
+
+{{=table}}

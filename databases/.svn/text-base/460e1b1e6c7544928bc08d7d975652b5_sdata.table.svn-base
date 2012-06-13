@@ -1,0 +1,46 @@
+(dp1
+S'comment'
+p2
+S'TEXT'
+p3
+sS'uploaded'
+p4
+S'TIMESTAMP NOT NULL'
+p5
+sS'datafile'
+p6
+S'CHAR(512) NOT NULL'
+p7
+sS'citation'
+p8
+S'TEXT NOT NULL'
+p9
+sS'taxon'
+p10
+S'INTEGER REFERENCES taxon(id) ON DELETE NO ACTION'
+p11
+sS'label'
+p12
+S'CHAR(512)'
+p13
+sS'focal_clade'
+p14
+S'INTEGER REFERENCES taxon(id) ON DELETE NO ACTION'
+p15
+sS'contributor'
+p16
+S'CHAR(128) NOT NULL'
+p17
+sS'data'
+p18
+S'BLOB'
+p19
+sS'id'
+p20
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p21
+sS'year_published'
+p22
+S'INTEGER'
+p23
+s.

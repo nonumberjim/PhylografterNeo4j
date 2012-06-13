@@ -1,0 +1,34 @@
+(dp1
+S'depth'
+p2
+S'INTEGER'
+p3
+sS'ncbi_taxon'
+p4
+S'INTEGER REFERENCES ncbi_taxon(id) ON DELETE NO ACTION'
+p5
+sS'name'
+p6
+S'CHAR(512) NOT NULL UNIQUE'
+p7
+sS'parent'
+p8
+S'INTEGER'
+p9
+sS'id'
+p10
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p11
+sS'back'
+p12
+S'INTEGER'
+p13
+sS'rank'
+p14
+S'CHAR(512)'
+p15
+sS'next'
+p16
+S'INTEGER'
+p17
+s.

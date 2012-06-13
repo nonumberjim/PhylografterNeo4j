@@ -1,0 +1,41 @@
+{{extend 'layout.html'}}
+
+<h2>
+Synthesis of angiosperm phylogeny
+</h2>
+
+<p>Molecular systematic studies continue to yield new knowledge about
+the relationships, ages etc. of particular branches of the angiosperm
+Tree of Life. How do we synthesize these results and
+produce <b>maximally comprehensive and accurate trees</b>?  Here, we
+hope to gather and organize the necessary information, and make it
+pubically available.</p>
+
+<p>Specifically, we aim to provide:</p>
+
+<ol>
+<li>A database of <b>source trees</b>, i.e., trees derived from
+published studies, archived node-by-node, with associated data
+(publication info, aligned sequences, Genbank ids, gene and genome
+info, support values, age estimates, etc.).  Most importantly, nodes
+(both OTUs and internal clades) are cross-referenced across trees
+by <b>taxon</b>.</li>
+
+<li>An intuitive and convenient interface for <b>grafting</b> source
+trees together, to create increasingly comprehensive trees.</li>
+
+<li> <b>Analytical tools</b> for (a) guiding additional sampling of
+taxa and genes, and (b) creating new taxon-by-gene combinations for
+analysis.</li>
+</ol>
+
+{{nstudies = db(db.study.id>0).count()}}
+{{nstrees = db(db.stree.id>0).count()}}
+{{notus = db(db.otu.id>0).count()}}
+{{ntaxa = len(db(db.otu.taxon!=None).select(db.otu.taxon, distinct=True))}}
+
+<p>The database currently contains {{=nstudies}}
+<a href="{{=URL(c='study',f='index')}}">studies</a> and
+{{=nstrees}} <a href="{{=URL(c='stree',f='index')}}">source trees</a>,
+representing {{=notus}} OTUs and {{=ntaxa}} distinct terminal taxa.
+Hey, it's a start.</p>

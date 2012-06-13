@@ -1,0 +1,1225 @@
+timestamp: 2011-06-27T12:56:00.664742
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-06-27T12:56:36.044160
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-06-27T12:57:57.576210
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-06-27T13:29:52.355393
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-06-27T15:09:06.630802
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-06-29T09:57:24.123415
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-06-29T09:58:04.091765
+CREATE TABLE auth_cas(
+    id INT AUTO_INCREMENT NOT NULL,
+    user_id INT, INDEX user_id__idx (user_id), FOREIGN KEY (user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    url VARCHAR(255),
+    uuid VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-06-29T15:06:36.234464
+CREATE TABLE collaboration(
+    id INT AUTO_INCREMENT NOT NULL,
+    user INT, INDEX user__idx (user), FOREIGN KEY (user) REFERENCES auth_user(id) ON DELETE CASCADE,
+    gtree INT, INDEX gtree__idx (gtree), FOREIGN KEY (gtree) REFERENCES gtree(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-07-11T12:27:30.694620
+CREATE TABLE unique_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-07-11T12:27:30.807695
+CREATE TABLE user_map(
+    id INT AUTO_INCREMENT NOT NULL,
+    auth_user_id INT, INDEX auth_user_id__idx (auth_user_id), FOREIGN KEY (auth_user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    unique_user_id INT, INDEX unique_user_id__idx (unique_user_id), FOREIGN KEY (unique_user_id) REFERENCES unique_user(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-07-11T12:43:17.397784
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T12:43:42.598707
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T12:45:23.590575
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T12:46:55.230002
+ALTER TABLE collaboration ADD unique_user_id INT, ADD INDEX unique_user_id__idx (unique_user_id), ADD FOREIGN KEY (unique_user_id) REFERENCES unique_user(id) ON DELETE CASCADE;
+success!
+timestamp: 2011-07-11T12:46:55.286273
+ALTER TABLE collaboration DROP COLUMN user;
+timestamp: 2011-07-11T12:49:55.743286
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+timestamp: 2011-07-11T13:22:23.305780
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:38:27.017935
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:44:55.500163
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:45:14.863616
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:54:53.681728
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:55:53.603204
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:56:16.406841
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:16.406898
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:17.223540
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:17.223603
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:17.681258
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:17.681314
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:18.494626
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:18.494718
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:18.905793
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:18.905850
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:19.300820
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:19.300887
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:19.773031
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:19.773084
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:20.203175
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:20.203230
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:20.654214
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:56:20.654270
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:56:41.060974
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T13:57:35.937400
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:35.937456
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:37.872384
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:37.872440
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:38.378348
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:38.378418
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:38.993616
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:38.993668
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:39.523763
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:39.523816
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:40.026535
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:40.026594
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:40.441493
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:40.441550
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:40.829966
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:40.830022
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:42.060039
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:42.060090
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:45.121343
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:45.121395
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:57:55.485810
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T13:57:55.485862
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T13:59:38.681621
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T14:02:55.061830
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T14:05:20.969431
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T14:09:26.692521
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T14:10:32.053524
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T14:13:15.536120
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T14:13:15.536172
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T14:13:36.559142
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+timestamp: 2011-07-11T14:13:50.449986
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T14:13:50.450039
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T14:13:51.853215
+ALTER TABLE collaboration ADD user__tmp INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user__tmp=user;
+faked!
+ALTER TABLE collaboration DROP COLUMN user;
+faked!
+ALTER TABLE collaboration ADD user INT, ADD INDEX user__idx (user), ADD FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE;
+faked!
+UPDATE collaboration SET user=user__tmp;
+faked!
+ALTER TABLE collaboration DROP COLUMN user__tmp;
+faked!
+timestamp: 2011-07-11T14:13:51.853268
+ALTER TABLE collaboration DROP COLUMN unique_user_id;
+faked!
+timestamp: 2011-07-11T14:14:36.463061
+CREATE TABLE collaboration(
+    id INT AUTO_INCREMENT NOT NULL,
+    user INT, INDEX user__idx (user), FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE,
+    gtree INT, INDEX gtree__idx (gtree), FOREIGN KEY (gtree) REFERENCES gtree(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-07-11T14:17:27.254671
+CREATE TABLE gtree_share(
+    id INT AUTO_INCREMENT NOT NULL,
+    user INT, INDEX user__idx (user), FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE,
+    gtree INT, INDEX gtree__idx (gtree), FOREIGN KEY (gtree) REFERENCES gtree(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2011-09-02T11:20:42.274085
+CREATE TABLE treebase_matrix(
+    id INT AUTO_INCREMENT NOT NULL,
+    study INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION,
+    label VARCHAR(255),
+    type VARCHAR(255),
+    nchar INT,
+    ntax INT,
+    tb_matrix_id INT NOT NULL UNIQUE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-02T11:21:20.202643
+CREATE TABLE treebase_matrix(
+    id INT AUTO_INCREMENT NOT NULL,
+    study INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION,
+    label VARCHAR(255),
+    type VARCHAR(255),
+    nchar INT,
+    ntax INT,
+    tb_matrix_id INT NOT NULL UNIQUE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-02T11:24:28.349212
+CREATE TABLE treebase_matrix_row(
+    id INT AUTO_INCREMENT NOT NULL,
+    otu INT, INDEX otu__idx (otu), FOREIGN KEY (otu) REFERENCES otu(id) ON DELETE NO ACTION,
+    data LONGTEXT NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-02T11:37:45.832236
+CREATE TABLE treebase_matrix_row(
+    id INT AUTO_INCREMENT NOT NULL,
+    otu INT, INDEX otu__idx (otu), FOREIGN KEY (otu) REFERENCES otu(id) ON DELETE NO ACTION,
+    data LONGTEXT NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-02T11:38:02.660704
+CREATE TABLE treebase_matrix(
+    id INT AUTO_INCREMENT NOT NULL,
+    study INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION,
+    label VARCHAR(255),
+    type VARCHAR(255),
+    nchar INT,
+    ntax INT,
+    tb_matrix_id INT NOT NULL UNIQUE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-25T18:36:02.357750
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    url CHAR(512),
+    uuid CHAR(512)
+);
+timestamp: 2011-09-25T18:40:34.418922
+CREATE TABLE ncbi_name(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    taxid INTEGER NOT NULL,
+    name CHAR(512),
+    unique_name CHAR(512) UNIQUE,
+    name_class CHAR(512)
+);
+timestamp: 2011-09-25T18:49:01.283999
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on TIMESTAMP,
+    url CHAR(512),
+    uuid CHAR(512)
+);
+timestamp: 2011-09-29T13:46:23.890887
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T13:47:14.043464
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:39:46.777224
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:40:49.212695
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:45:16.776243
+CREATE TABLE ncbi_taxon(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL UNIQUE,
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    name VARCHAR(255) NOT NULL,
+    rank VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:45:30.650447
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:47:33.315879
+CREATE TABLE ncbi_taxon(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL UNIQUE,
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    name VARCHAR(255) NOT NULL,
+    rank VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:47:44.328220
+CREATE TABLE ncbi_name(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL,
+    name VARCHAR(255),
+    unique_name VARCHAR(255) UNIQUE,
+    name_class VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:48:00.764832
+CREATE TABLE ncbi_node(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL,
+    name VARCHAR(255),
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    rank VARCHAR(255),
+    hidden CHAR(1) NOT NULL DEFAULT 'F',
+    comments LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:48:19.133178
+CREATE TABLE plugin_wiki_page(
+    id INT AUTO_INCREMENT NOT NULL,
+    slug VARCHAR(255),
+    title VARCHAR(255),
+    active CHAR(1),
+    public CHAR(1),
+    body LONGTEXT,
+    role INT, INDEX role__idx (role), FOREIGN KEY (role) REFERENCES auth_group(id) ON DELETE CASCADE,
+    changelog VARCHAR(255),
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    modified_by INT, INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:52:53.256886
+CREATE TABLE plugin_wiki_page(
+    id INT AUTO_INCREMENT NOT NULL,
+    slug VARCHAR(255),
+    title VARCHAR(255),
+    active CHAR(1),
+    public CHAR(1),
+    body LONGTEXT,
+    role INT, INDEX role__idx (role), FOREIGN KEY (role) REFERENCES auth_group(id) ON DELETE CASCADE,
+    changelog VARCHAR(255),
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    modified_by INT, INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T15:57:14.946557
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T16:00:26.534204
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T16:01:56.168663
+CREATE TABLE ncbi_taxon(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL UNIQUE,
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    name VARCHAR(255) NOT NULL,
+    rank VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2011-09-29T16:03:21.918150
+CREATE TABLE ncbi_taxon(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL UNIQUE,
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    name VARCHAR(255) NOT NULL,
+    rank VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.919765
+CREATE TABLE ncbi_name(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL,
+    name VARCHAR(255),
+    unique_name VARCHAR(255) UNIQUE,
+    name_class VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.922003
+CREATE TABLE ncbi_node(
+    id INT AUTO_INCREMENT NOT NULL,
+    taxid INT NOT NULL,
+    name VARCHAR(255),
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    rank VARCHAR(255),
+    hidden CHAR(1) NOT NULL DEFAULT 'F',
+    comments LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.923877
+CREATE TABLE apg_taxon(
+    id INT AUTO_INCREMENT NOT NULL,
+    parent INT,
+    next INT,
+    back INT,
+    depth INT,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    rank VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.925789
+CREATE TABLE taxon(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    rank VARCHAR(255),
+    ncbi_taxid INT,
+    namebank_id INT,
+    tb_taxid INT,
+    apg_taxon INT, INDEX apg_taxon__idx (apg_taxon), FOREIGN KEY (apg_taxon) REFERENCES apg_taxon(id) ON DELETE NO ACTION,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.933939
+CREATE TABLE plantlist(
+    id INT AUTO_INCREMENT NOT NULL,
+    major_group VARCHAR(255),
+    family VARCHAR(255),
+    genus_hybrid_marker VARCHAR(255),
+    genus VARCHAR(255),
+    species_hybrid_marker VARCHAR(255),
+    species VARCHAR(255),
+    infra_rank VARCHAR(255),
+    infra_epithet VARCHAR(255),
+    author VARCHAR(255),
+    TPL_status VARCHAR(255),
+    original_status VARCHAR(255),
+    confidence VARCHAR(255),
+    source VARCHAR(255),
+    source_id VARCHAR(255),
+    IPNI_id VARCHAR(255),
+    publication VARCHAR(255),
+    pub_collation VARCHAR(255),
+    pub_page VARCHAR(255),
+    pub_date VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.935397
+CREATE TABLE gene(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    genome VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.938947
+CREATE TABLE study(
+    id INT AUTO_INCREMENT NOT NULL,
+    focal_clade INT, INDEX focal_clade__idx (focal_clade), FOREIGN KEY (focal_clade) REFERENCES taxon(id) ON DELETE NO ACTION,
+    citation LONGTEXT NOT NULL,
+    doi VARCHAR(255),
+    label VARCHAR(255),
+    year_published INT,
+    contributor VARCHAR(128) NOT NULL,
+    comment LONGTEXT,
+    uploaded DATETIME NOT NULL,
+    treebase_id INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.941236
+CREATE TABLE study_file(
+    id INT AUTO_INCREMENT NOT NULL,
+    study INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION,
+    description VARCHAR(255),
+    source VARCHAR(255),
+    filename VARCHAR(255),
+    file VARCHAR(255),
+    data LONGBLOB,
+    contributor VARCHAR(128) NOT NULL,
+    comment LONGTEXT,
+    uploaded DATETIME NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.943002
+CREATE TABLE otu(
+    id INT AUTO_INCREMENT NOT NULL,
+    study INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION,
+    label VARCHAR(255) NOT NULL,
+    taxon INT, INDEX taxon__idx (taxon), FOREIGN KEY (taxon) REFERENCES taxon(id) ON DELETE NO ACTION,
+    tb_nexml_id VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.944928
+CREATE TABLE sequence(
+    id INT AUTO_INCREMENT NOT NULL,
+    otu INT, INDEX otu__idx (otu), FOREIGN KEY (otu) REFERENCES otu(id) ON DELETE NO ACTION,
+    gene INT, INDEX gene__idx (gene), FOREIGN KEY (gene) REFERENCES gene(id) ON DELETE NO ACTION,
+    gi INT,
+    ac VARCHAR(255),
+    data LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.947630
+CREATE TABLE stree(
+    id INT AUTO_INCREMENT NOT NULL,
+    study INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION,
+    contributor VARCHAR(128) NOT NULL,
+    uploaded DATETIME NOT NULL,
+    newick LONGTEXT,
+    clade_labels_represent VARCHAR(255),
+    clade_labels_comment LONGTEXT,
+    branch_lengths_represent VARCHAR(255),
+    branch_lengths_comment LONGTEXT,
+    newick_idstr LONGTEXT,
+    type VARCHAR(128) NOT NULL,
+    author_contributed CHAR(1),
+    tb_tree_id VARCHAR(128),
+    comment LONGTEXT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.952899
+CREATE TABLE snode(
+    id INT AUTO_INCREMENT NOT NULL,
+    label VARCHAR(128),
+    otu INT, INDEX otu__idx (otu), FOREIGN KEY (otu) REFERENCES otu(id) ON DELETE NO ACTION,
+    taxon INT, INDEX taxon__idx (taxon), FOREIGN KEY (taxon) REFERENCES taxon(id) ON DELETE NO ACTION,
+    ingroup CHAR(1),
+    isleaf CHAR(1),
+    parent INT, INDEX parent__idx (parent), FOREIGN KEY (parent) REFERENCES snode(id) ON DELETE NO ACTION,
+    next INT,
+    back INT,
+    depth INT,
+    length DOUBLE,
+    age DOUBLE,
+    age_min DOUBLE,
+    age_max DOUBLE,
+    bootstrap_support DOUBLE,
+    posterior_support DOUBLE,
+    other_support DOUBLE,
+    other_support_type VARCHAR(255),
+    tree INT, INDEX tree__idx (tree), FOREIGN KEY (tree) REFERENCES stree(id) ON DELETE NO ACTION,
+    pruned CHAR(1) NOT NULL DEFAULT 'F',
+    mtime DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.954953
+CREATE TABLE gtree(
+    id INT AUTO_INCREMENT NOT NULL,
+    contributor VARCHAR(128),
+    mtime DATETIME,
+    title VARCHAR(255),
+    comment LONGTEXT,
+    date DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.958703
+CREATE TABLE gnode(
+    id INT AUTO_INCREMENT NOT NULL,
+    label VARCHAR(128),
+    istip CHAR(1),
+    ntips INT,
+    pruned CHAR(1) NOT NULL DEFAULT 'F',
+    parent INT, INDEX parent__idx (parent), FOREIGN KEY (parent) REFERENCES gnode(id) ON DELETE NO ACTION,
+    next INT,
+    back INT,
+    length DOUBLE,
+    age DOUBLE,
+    age_min DOUBLE,
+    age_max DOUBLE,
+    tree INT, INDEX tree__idx (tree), FOREIGN KEY (tree) REFERENCES gtree(id) ON DELETE NO ACTION,
+    snode INT, INDEX snode__idx (snode), FOREIGN KEY (snode) REFERENCES snode(id) ON DELETE NO ACTION,
+    stree INT, INDEX stree__idx (stree), FOREIGN KEY (stree) REFERENCES stree(id) ON DELETE NO ACTION,
+    mtime DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.961998
+CREATE TABLE gtree_edit(
+    id INT AUTO_INCREMENT NOT NULL,
+    gtree INT, INDEX gtree__idx (gtree), FOREIGN KEY (gtree) REFERENCES gtree(id) ON DELETE CASCADE,
+    action VARCHAR(255),
+    target_gnode INT, INDEX target_gnode__idx (target_gnode), FOREIGN KEY (target_gnode) REFERENCES gnode(id) ON DELETE CASCADE,
+    source_node INT, INDEX source_node__idx (source_node), FOREIGN KEY (source_node) REFERENCES snode(id) ON DELETE CASCADE,
+    clipboard_node INT, INDEX clipboard_node__idx (clipboard_node), FOREIGN KEY (clipboard_node) REFERENCES snode(id) ON DELETE CASCADE,
+    affected_clade_id INT,
+    affected_node_id INT,
+    comment LONGTEXT,
+    user INT, INDEX user__idx (user), FOREIGN KEY (user) REFERENCES auth_user(id) ON DELETE CASCADE,
+    originalTreeType VARCHAR(255),
+    mtime DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.963654
+CREATE TABLE prune_detail(
+    id INT AUTO_INCREMENT NOT NULL,
+    pruned_gnode INT, INDEX pruned_gnode__idx (pruned_gnode), FOREIGN KEY (pruned_gnode) REFERENCES gnode(id) ON DELETE CASCADE,
+    gtree_edit INT, INDEX gtree_edit__idx (gtree_edit), FOREIGN KEY (gtree_edit) REFERENCES gtree_edit(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.965501
+CREATE TABLE unique_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.967200
+CREATE TABLE user_map(
+    id INT AUTO_INCREMENT NOT NULL,
+    auth_user_id INT, INDEX auth_user_id__idx (auth_user_id), FOREIGN KEY (auth_user_id) REFERENCES auth_user(id) ON DELETE CASCADE,
+    unique_user_id INT, INDEX unique_user_id__idx (unique_user_id), FOREIGN KEY (unique_user_id) REFERENCES unique_user(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:21.968597
+CREATE TABLE gtree_share(
+    id INT AUTO_INCREMENT NOT NULL,
+    user INT, INDEX user__idx (user), FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE,
+    gtree INT, INDEX gtree__idx (gtree), FOREIGN KEY (gtree) REFERENCES gtree(id) ON DELETE CASCADE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:22.000266
+CREATE TABLE plugin_wiki_page(
+    id INT AUTO_INCREMENT NOT NULL,
+    slug VARCHAR(255),
+    title VARCHAR(255),
+    active CHAR(1),
+    public CHAR(1),
+    body LONGTEXT,
+    role INT, INDEX role__idx (role), FOREIGN KEY (role) REFERENCES auth_group(id) ON DELETE CASCADE,
+    changelog VARCHAR(255),
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    modified_by INT, INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:22.003136
+CREATE TABLE plugin_wiki_page_archive(
+    id INT AUTO_INCREMENT NOT NULL,
+    current_record INT, INDEX current_record__idx (current_record), FOREIGN KEY (current_record) REFERENCES plugin_wiki_page(id) ON DELETE CASCADE,
+    slug VARCHAR(255),
+    title VARCHAR(255),
+    active CHAR(1),
+    public CHAR(1),
+    body LONGTEXT,
+    role INT, INDEX role__idx (role), FOREIGN KEY (role) REFERENCES auth_group(id) ON DELETE CASCADE,
+    changelog VARCHAR(255),
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    modified_by INT, INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:22.005546
+CREATE TABLE plugin_wiki_attachment(
+    id INT AUTO_INCREMENT NOT NULL,
+    tablename VARCHAR(255),
+    record_id INT,
+    name VARCHAR(255),
+    file VARCHAR(255),
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    modified_by INT, INDEX modified_by__idx (modified_by), FOREIGN KEY (modified_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    modified_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:22.007352
+CREATE TABLE plugin_wiki_comment(
+    id INT AUTO_INCREMENT NOT NULL,
+    tablename VARCHAR(255),
+    record_id INT,
+    body VARCHAR(255),
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:22.009110
+CREATE TABLE plugin_wiki_tag(
+    id INT AUTO_INCREMENT NOT NULL,
+    name VARCHAR(255),
+    links INT,
+    created_by INT, INDEX created_by__idx (created_by), FOREIGN KEY (created_by) REFERENCES auth_user(id) ON DELETE CASCADE,
+    created_on DATETIME,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:22.010692
+CREATE TABLE plugin_wiki_link(
+    id INT AUTO_INCREMENT NOT NULL,
+    tag INT, INDEX tag__idx (tag), FOREIGN KEY (tag) REFERENCES plugin_wiki_tag(id) ON DELETE CASCADE,
+    table_name VARCHAR(255),
+    record_id INT,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+faked!
+timestamp: 2011-09-29T16:03:43.320205
+CREATE TABLE auth_user(
+    id INT AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(255),
+    password VARCHAR(255),
+    registration_key VARCHAR(255),
+    reset_password_key VARCHAR(255),
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2012-02-13T17:06:12.212203
+ALTER TABLE gnode DROP COLUMN stree;
+timestamp: 2012-02-29T11:36:41.263420
+ALTER TABLE clipboard ADD treetype VARCHAR(255);
+success!
+timestamp: 2012-03-22T16:12:29.170238
+ALTER TABLE gtree_edit ADD clipboard_node__tmp INT;
+success!
+UPDATE gtree_edit SET clipboard_node__tmp=clipboard_node;
+success!
+ALTER TABLE gtree_edit DROP COLUMN clipboard_node;
+timestamp: 2012-04-24T10:54:01.013382
+ALTER TABLE stree ADD allnodeshavelength CHAR(1);
+success!
+timestamp: 2012-04-24T11:02:48.625718
+ALTER TABLE stree DROP COLUMN allnodeshavelength;
+success!
+timestamp: 2012-04-24T14:46:39.207399
+ALTER TABLE snode ADD viewweight DOUBLE;
+success!
+timestamp: 2012-04-25T10:00:27.292112
+ALTER TABLE gnode ADD viewweight DOUBLE;
+success!
+timestamp: 2012-04-25T10:00:30.346125
+CREATE TABLE treeMeta(
+    id INT AUTO_INCREMENT NOT NULL,
+    tree INT,
+    treeType VARCHAR(255),
+    longestTraversal DOUBLE,
+    data LONGTEXT NOT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2012-04-25T10:00:30.364876
+CREATE TABLE treeMetaDepthDetail(
+    id INT AUTO_INCREMENT NOT NULL,
+    treeMeta INT, INDEX treeMeta__idx (treeMeta), FOREIGN KEY (treeMeta) REFERENCES treeMeta(id) ON DELETE CASCADE,
+    depth INT,
+    nodeCount DOUBLE,
+    tipCount DOUBLE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2012-04-25T10:14:27.731184
+ALTER TABLE snode DROP COLUMN viewweight;
+success!
+timestamp: 2012-04-25T10:14:55.532893
+ALTER TABLE treeMeta DROP COLUMN data;
+success!
+timestamp: 2012-04-25T10:18:52.744414
+ALTER TABLE snode ADD viewweight DOUBLE;
+success!
+timestamp: 2012-04-25T10:31:15.285551
+ALTER TABLE snode ADD text VARCHAR(255);
+success!
+timestamp: 2012-04-25T10:47:25.051792
+CREATE TABLE phylogramNodeMeta(
+    id INT AUTO_INCREMENT NOT NULL,
+    tree INT,
+    treeType VARCHAR(255),
+    text VARCHAR(255),
+    nodeWeight DOUBLE,
+    nonLeafTextXCoord DOUBLE,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2012-04-25T10:47:36.795010
+ALTER TABLE snode DROP COLUMN text;
+success!
+timestamp: 2012-04-25T10:47:43.287632
+ALTER TABLE snode DROP COLUMN viewweight;
+success!
+timestamp: 2012-04-25T10:47:54.327742
+ALTER TABLE phylogramNodeMeta ADD weight DOUBLE;
+success!
+timestamp: 2012-04-25T10:47:54.355364
+ALTER TABLE phylogramNodeMeta DROP COLUMN nodeweight;
+success!
+timestamp: 2012-04-25T14:15:27.927605
+ALTER TABLE treeMeta ADD depth INT;
+success!
+timestamp: 2012-04-25T14:15:27.978377
+ALTER TABLE phylogramNodeMeta ADD nodeid INT;
+success!
+timestamp: 2012-04-25T14:15:28.001348
+ALTER TABLE phylogramNodeMeta DROP COLUMN nonleaftextxcoord;
+success!
+timestamp: 2012-04-25T14:54:50.486711
+ALTER TABLE treeMetaDepthDetail ADD longestlabel INT;
+success!
+timestamp: 2012-04-25T14:57:19.397905
+ALTER TABLE phylogramNodeMeta ADD longesttraversal DOUBLE;
+success!
+timestamp: 2012-04-26T10:59:27.558499
+ALTER TABLE phylogramNodeMeta ADD descendanttipcount INT;
+success!
+timestamp: 2012-04-27T15:34:03.118388
+ALTER TABLE treeMeta DROP COLUMN longesttraversal;
+success!
+timestamp: 2012-05-01T10:24:55.086223
+ALTER TABLE phylogramNodeMeta ADD closestdescendantlabel VARCHAR(255);
+success!
+timestamp: 2012-05-08T11:17:06.464991
+ALTER TABLE gnode ADD isleaf CHAR(1);
+success!
+timestamp: 2012-05-08T11:17:10.147624
+ALTER TABLE gnode DROP COLUMN istip;
+success!
+timestamp: 2012-05-22T11:43:13.834424
+ALTER TABLE gnode ADD viewweight DOUBLE;
+success!
+timestamp: 2012-05-22T11:43:17.601135
+ALTER TABLE gnode ADD isleaf CHAR(1);

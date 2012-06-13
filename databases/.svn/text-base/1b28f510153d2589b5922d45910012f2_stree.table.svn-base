@@ -1,0 +1,66 @@
+(dp1
+S'uploaded'
+p2
+S'DATETIME NOT NULL'
+p3
+sS'comment'
+p4
+S'LONGTEXT'
+p5
+sS'tb_study_id'
+p6
+S'VARCHAR(128)'
+p7
+sS'sdata'
+p8
+S'INT, INDEX sdata__idx (sdata), FOREIGN KEY (sdata) REFERENCES sdata(id) ON DELETE NO ACTION'
+p9
+sS'type'
+p10
+S'VARCHAR(128) NOT NULL'
+p11
+sS'newick_idstr'
+p12
+S'LONGTEXT'
+p13
+sS'clade_labels_comment'
+p14
+S'LONGTEXT'
+p15
+sS'newick'
+p16
+S'LONGTEXT'
+p17
+sS'clade_labels_represent'
+p18
+S'VARCHAR(512)'
+p19
+sS'tb_analysis_id'
+p20
+S'VARCHAR(128)'
+p21
+sS'contributor'
+p22
+S'VARCHAR(128)'
+p23
+sS'tb_tree_id'
+p24
+S'VARCHAR(128)'
+p25
+sS'branch_lengths_represent'
+p26
+S'VARCHAR(512)'
+p27
+sS'data'
+p28
+S'INT, INDEX data__idx (data), FOREIGN KEY (data) REFERENCES sdata(id) ON DELETE NO ACTION'
+p29
+sS'id'
+p30
+S'INT AUTO_INCREMENT NOT NULL'
+p31
+sS'branch_lengths_comment'
+p32
+S'LONGTEXT'
+p33
+s.

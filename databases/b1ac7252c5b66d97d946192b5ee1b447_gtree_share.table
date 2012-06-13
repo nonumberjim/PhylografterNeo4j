@@ -1,0 +1,37 @@
+(dp1
+S'gtree'
+p2
+(dp3
+S'type'
+p4
+S'reference gtree'
+p5
+sS'sortable'
+p6
+I3
+sS'sql'
+p7
+S'INT, INDEX gtree__idx (gtree), FOREIGN KEY (gtree) REFERENCES gtree(id) ON DELETE CASCADE'
+p8
+ssS'id'
+p9
+(dp10
+g4
+g9
+sg6
+I1
+sg7
+S'INT AUTO_INCREMENT NOT NULL'
+p11
+ssS'user'
+p12
+(dp13
+g4
+S'reference unique_user'
+p14
+sg6
+I2
+sg7
+S'INT, INDEX user__idx (user), FOREIGN KEY (user) REFERENCES unique_user(id) ON DELETE CASCADE'
+p15
+ss.

@@ -1,0 +1,58 @@
+(dp1
+S'study'
+p2
+(dp3
+S'type'
+p4
+S'reference study'
+p5
+sS'sortable'
+p6
+I2
+sS'sql'
+p7
+S'INT, INDEX study__idx (study), FOREIGN KEY (study) REFERENCES study(id) ON DELETE NO ACTION'
+p8
+ssS'taxon'
+p9
+(dp10
+g4
+S'reference taxon'
+p11
+sg6
+I4
+sg7
+S'INT, INDEX taxon__idx (taxon), FOREIGN KEY (taxon) REFERENCES taxon(id) ON DELETE NO ACTION'
+p12
+ssS'tb_nexml_id'
+p13
+(dp14
+g4
+S'string'
+p15
+sg6
+I5
+sg7
+S'VARCHAR(255)'
+p16
+ssS'id'
+p17
+(dp18
+g4
+g17
+sg6
+I1
+sg7
+S'INT AUTO_INCREMENT NOT NULL'
+p19
+ssS'label'
+p20
+(dp21
+g4
+g15
+sg6
+I3
+sg7
+S'VARCHAR(255) NOT NULL'
+p22
+ss.

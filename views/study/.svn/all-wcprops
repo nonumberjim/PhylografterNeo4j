@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/608/branches/v2-dev/views/study
+END
+record.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/346/branches/v2-dev/views/study/record.html
+END
+search.load
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/346/branches/v2-dev/views/study/search.load
+END
+tbimport2.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/505/branches/v2-dev/views/study/tbimport2.html
+END
+editfile.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/348/branches/v2-dev/views/study/editfile.html
+END
+addfile.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/346/branches/v2-dev/views/study/addfile.html
+END
+record.load
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/346/branches/v2-dev/views/study/record.load
+END
+recent.load
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/346/branches/v2-dev/views/study/recent.load
+END
+dtrecords.json
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/509/branches/v2-dev/views/study/dtrecords.json
+END
+tbimport.html
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/503/branches/v2-dev/views/study/tbimport.html
+END
+tbimport_trees.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/510/branches/v2-dev/views/study/tbimport_trees.html
+END
+create.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/346/branches/v2-dev/views/study/create.html
+END
+powertable.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/346/branches/v2-dev/views/study/powertable.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/509/branches/v2-dev/views/study/index.html
+END
+view.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/608/branches/v2-dev/views/study/view.html
+END
+tbimport_otus.html
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/509/branches/v2-dev/views/study/tbimport_otus.html
+END
+index_ajax.html
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/346/branches/v2-dev/views/study/index_ajax.html
+END

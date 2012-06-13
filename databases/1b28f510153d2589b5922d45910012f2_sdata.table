@@ -1,0 +1,38 @@
+(dp1
+S'comment'
+p2
+S'LONGTEXT'
+p3
+sS'uploaded'
+p4
+S'DATETIME NOT NULL'
+p5
+sS'datafile'
+p6
+S'VARCHAR(512)'
+p7
+sS'citation'
+p8
+S'LONGTEXT NOT NULL'
+p9
+sS'label'
+p10
+S'VARCHAR(512)'
+p11
+sS'contributor'
+p12
+S'VARCHAR(128) NOT NULL'
+p13
+sS'data'
+p14
+S'LONGBLOB'
+p15
+sS'id'
+p16
+S'INT AUTO_INCREMENT NOT NULL'
+p17
+sS'year_published'
+p18
+S'INT'
+p19
+s.

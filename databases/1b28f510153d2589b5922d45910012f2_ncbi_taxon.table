@@ -1,0 +1,34 @@
+(dp1
+S'name'
+p2
+S'VARCHAR(512) NOT NULL'
+p3
+sS'parent'
+p4
+S'INT'
+p5
+sS'taxid'
+p6
+S'INT NOT NULL UNIQUE'
+p7
+sS'back'
+p8
+S'INT'
+p9
+sS'rank'
+p10
+S'VARCHAR(512)'
+p11
+sS'next'
+p12
+S'INT'
+p13
+sS'depth'
+p14
+S'INT'
+p15
+sS'id'
+p16
+S'INT AUTO_INCREMENT NOT NULL'
+p17
+s.

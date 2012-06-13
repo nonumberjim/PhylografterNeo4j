@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/sizzle
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/sizzle/LICENSE
+END
+sizzle.js
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/sizzle/sizzle.js
+END
+sizzle.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/sizzle/sizzle.min.js
+END

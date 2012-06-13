@@ -1,0 +1,74 @@
+(dp1
+S'apg_taxon'
+p2
+(dp3
+S'sortable'
+p4
+I6
+sS'type'
+p5
+S'reference apg_taxon'
+p6
+sS'sql'
+p7
+S'INT, INDEX apg_taxon__idx (apg_taxon), FOREIGN KEY (apg_taxon) REFERENCES apg_taxon(id) ON DELETE NO ACTION'
+p8
+ssS'ncbi_taxon'
+p9
+(dp10
+g4
+I5
+sg5
+S'reference ncbi_taxon'
+p11
+sg7
+S'INT, INDEX ncbi_taxon__idx (ncbi_taxon), FOREIGN KEY (ncbi_taxon) REFERENCES ncbi_taxon(id) ON DELETE NO ACTION'
+p12
+ssS'parent'
+p13
+(dp14
+g4
+I2
+sg5
+S'integer'
+p15
+sg7
+S'INT'
+p16
+ssS'id'
+p17
+(dp18
+g4
+I1
+sg5
+S'id'
+p19
+sg7
+S'INT AUTO_INCREMENT NOT NULL'
+p20
+ssS'rank'
+p21
+(dp22
+g4
+I4
+sg5
+S'string'
+p23
+sg7
+S'VARCHAR(255)'
+p24
+ssS'name'
+p25
+(dp26
+S'type'
+p27
+S'string'
+p28
+sS'sortable'
+p29
+I2
+sS'sql'
+p30
+S'VARCHAR(255) NOT NULL'
+p31
+ss.

@@ -1,0 +1,34 @@
+(dp1
+S'name'
+p2
+S'VARCHAR(128) NOT NULL UNIQUE'
+p3
+sS'parent'
+p4
+S'INT'
+p5
+sS'back'
+p6
+S'INT'
+p7
+sS'rank'
+p8
+S'VARCHAR(512)'
+p9
+sS'next'
+p10
+S'INT'
+p11
+sS'depth'
+p12
+S'INT'
+p13
+sS'id'
+p14
+S'INT AUTO_INCREMENT NOT NULL'
+p15
+sS'ncbi_taxon'
+p16
+S'INT, INDEX ncbi_taxon__idx (ncbi_taxon), FOREIGN KEY (ncbi_taxon) REFERENCES ncbi_taxon(id) ON DELETE NO ACTION'
+p17
+s.

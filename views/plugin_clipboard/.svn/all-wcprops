@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/612/branches/v2-dev/views/plugin_clipboard
+END
+viewAndGraft.load
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/612/branches/v2-dev/views/plugin_clipboard/viewAndGraft.load
+END
+instantiate.load
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/609/branches/v2-dev/views/plugin_clipboard/instantiate.load
+END
+default.load
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/534/branches/v2-dev/views/plugin_clipboard/default.load
+END
+scripts.load
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/535/branches/v2-dev/views/plugin_clipboard/scripts.load
+END
+addToClipboard.load
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/609/branches/v2-dev/views/plugin_clipboard/addToClipboard.load
+END

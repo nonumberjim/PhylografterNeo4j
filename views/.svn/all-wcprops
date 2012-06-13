@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/!svn/ver/672/branches/v2-dev/views
+END
+generic.html
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/250/branches/v2-dev/views/generic.html
+END
+layout.orig.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/346/branches/v2-dev/views/layout.orig.html
+END
+layout.html
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/635/branches/v2-dev/views/layout.html
+END
+generic.rss
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/255/branches/v2-dev/views/generic.rss
+END
+generic.json
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/284/branches/v2-dev/views/generic.json
+END
+generic.pdf
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/284/branches/v2-dev/views/generic.pdf
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/342/branches/v2-dev/views/__init__.py
+END
+generic.load
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/255/branches/v2-dev/views/generic.load
+END
+help.html
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/282/branches/v2-dev/views/help.html
+END
+appadmin.html
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/639/branches/v2-dev/views/appadmin.html
+END
+layout_gtree_view.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/282/branches/v2-dev/views/layout_gtree_view.html
+END
+layout_sleek.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/282/branches/v2-dev/views/layout_sleek.html
+END
+layout_right_sidebar.html
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/636/branches/v2-dev/views/layout_right_sidebar.html
+END
+faq.html
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/247/branches/v2-dev/views/faq.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/247/branches/v2-dev/views/index.html
+END
+generic.xml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/255/branches/v2-dev/views/generic.xml
+END
+layout_stree_view.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/250/branches/v2-dev/views/layout_stree_view.html
+END
+web2py_ajax.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/618/branches/v2-dev/views/web2py_ajax.html
+END

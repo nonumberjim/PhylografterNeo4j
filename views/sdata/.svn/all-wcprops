@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/285/branches/v2-dev/views/sdata
+END
+record.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/284/branches/v2-dev/views/sdata/record.html
+END
+search.load
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/284/branches/v2-dev/views/sdata/search.load
+END
+create.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/256/branches/v2-dev/views/sdata/create.html
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/285/branches/v2-dev/views/sdata/index.html
+END
+record.load
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/284/branches/v2-dev/views/sdata/record.load
+END
+view.html
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/256/branches/v2-dev/views/sdata/view.html
+END

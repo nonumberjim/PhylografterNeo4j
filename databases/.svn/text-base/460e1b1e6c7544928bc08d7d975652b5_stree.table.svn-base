@@ -1,0 +1,74 @@
+(dp1
+S'uploaded'
+p2
+S'TIMESTAMP NOT NULL'
+p3
+sS'comment'
+p4
+S'TEXT'
+p5
+sS'sdata'
+p6
+S'INTEGER REFERENCES sdata(id) ON DELETE NO ACTION'
+p7
+sS'newick'
+p8
+S'TEXT'
+p9
+sS'clade_labels_represent'
+p10
+S'CHAR(512)'
+p11
+sS'ingroup'
+p12
+S'INTEGER'
+p13
+sS'contributor'
+p14
+S'CHAR(128)'
+p15
+sS'tb_tree_id'
+p16
+S'CHAR(128)'
+p17
+sS'branch_lengths_represent'
+p18
+S'CHAR(512)'
+p19
+sS'data'
+p20
+S'INTEGER REFERENCES sdata(id) ON DELETE NO ACTION'
+p21
+sS'id'
+p22
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p23
+sS'branch_lengths_comment'
+p24
+S'TEXT'
+p25
+sS'tb_analysis_id'
+p26
+S'CHAR(128)'
+p27
+sS'study'
+p28
+S'INTEGER REFERENCES study(id) ON DELETE NO ACTION'
+p29
+sS'clade_labels_comment'
+p30
+S'TEXT'
+p31
+sS'newick_idstr'
+p32
+S'TEXT'
+p33
+sS'tb_study_id'
+p34
+S'CHAR(128)'
+p35
+sS'type'
+p36
+S'CHAR(128) NOT NULL'
+p37
+s.

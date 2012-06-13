@@ -1,0 +1,66 @@
+(dp1
+S'back'
+p2
+S'INTEGER'
+p3
+sS'pruned'
+p4
+S'CHAR(1) NOT NULL'
+p5
+sS'age_max'
+p6
+S'DOUBLE'
+p7
+sS'age'
+p8
+S'DOUBLE'
+p9
+sS'mtime'
+p10
+S'TIMESTAMP'
+p11
+sS'tree'
+p12
+S'INTEGER REFERENCES gtree(id) ON DELETE NO ACTION'
+p13
+sS'ntips'
+p14
+S'INTEGER'
+p15
+sS'snode'
+p16
+S'INTEGER REFERENCES snode(id) ON DELETE NO ACTION'
+p17
+sS'label'
+p18
+S'CHAR(128)'
+p19
+sS'parent_id'
+p20
+S'INTEGER'
+p21
+sS'istip'
+p22
+S'CHAR(1)'
+p23
+sS'stree'
+p24
+S'INTEGER REFERENCES stree(id) ON DELETE NO ACTION'
+p25
+sS'age_min'
+p26
+S'DOUBLE'
+p27
+sS'length'
+p28
+S'DOUBLE'
+p29
+sS'next'
+p30
+S'INTEGER'
+p31
+sS'id'
+p32
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p33
+s.

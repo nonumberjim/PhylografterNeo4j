@@ -1,0 +1,26 @@
+(dp1
+S'comment'
+p2
+S'LONGTEXT'
+p3
+sS'title'
+p4
+S'VARCHAR(255)'
+p5
+sS'date'
+p6
+S'DATETIME'
+p7
+sS'mtime'
+p8
+S'DATETIME'
+p9
+sS'contributor'
+p10
+S'VARCHAR(128)'
+p11
+sS'id'
+p12
+S'INT AUTO_INCREMENT NOT NULL'
+p13
+s.

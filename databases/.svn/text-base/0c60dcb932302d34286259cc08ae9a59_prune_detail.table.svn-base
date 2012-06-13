@@ -1,0 +1,38 @@
+(dp1
+S'gtree_edit'
+p2
+(dp3
+S'type'
+p4
+S'reference gtree_edit'
+p5
+sS'sortable'
+p6
+I3
+sS'sql'
+p7
+S'INT, INDEX gtree_edit__idx (gtree_edit), FOREIGN KEY (gtree_edit) REFERENCES gtree_edit(id) ON DELETE CASCADE'
+p8
+ssS'id'
+p9
+(dp10
+g4
+S'id'
+p11
+sg6
+I1
+sg7
+S'INT AUTO_INCREMENT NOT NULL'
+p12
+ssS'pruned_gnode'
+p13
+(dp14
+g4
+S'reference gnode'
+p15
+sg6
+I2
+sg7
+S'INT, INDEX pruned_gnode__idx (pruned_gnode), FOREIGN KEY (pruned_gnode) REFERENCES gnode(id) ON DELETE CASCADE'
+p16
+ss.

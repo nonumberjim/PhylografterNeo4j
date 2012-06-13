@@ -1,0 +1,21 @@
+{{extend 'layout.html'}}
+
+<div id="sourceTreeInfo">Source tree {{=rec.id}}: {{=rec.type}} from {{=A(_study_rep(rec.study), _href=URL('study','view',args=rec.study.id))}}</div>
+
+{{#TODO should move the arguments to the plugin model - its getting messy here}}
+
+{{=plugin_treeViewer(
+    dict( treeId = request.args(0),
+          auxPlugins = [ dict( name = 'clipboard', use = 'addToClipboard' ) ],
+          menuInfo = dict( options = [ dict( name = 'branchLength' ), dict( name = 'search' ), dict( name = 'treeSize' )  ] ),
+          eventInfo = dict( labelClick = dict( type = 'getUrlForm',
+                                               title = 'Edit Taxon',
+                                               successTrigger = 'editNode',
+                                               url = str( URL( c='snode', f='editSnodeTaxon.load' ) ) ),
+                            nodeRightClick =
+                                dict( type = 'contextMenu',
+                                      options = [ dict( text = 'Collapse Clade', handler = 'collapseClade' ),
+                                                  dict( text = 'Edit Node', handler = 'getUrlForm', external = 'True', successTrigger = 'editNode',
+                                                        url = str( URL( c = 'snode', f = 'update_snode.load' ) ),
+                                                        urlArgs = [ 'nodeId' ] ) ] ) ),
+          viewInfo = dict( type = 'phylogram', mode = 'navigate' ) ) ) }}

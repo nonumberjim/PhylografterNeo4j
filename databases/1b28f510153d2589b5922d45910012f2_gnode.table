@@ -1,0 +1,66 @@
+(dp1
+S'back'
+p2
+S'INT'
+p3
+sS'pruned'
+p4
+S'CHAR(1) NOT NULL'
+p5
+sS'age_max'
+p6
+S'DOUBLE'
+p7
+sS'age'
+p8
+S'DOUBLE'
+p9
+sS'mtime'
+p10
+S'DATETIME'
+p11
+sS'tree'
+p12
+S'INT, INDEX tree__idx (tree), FOREIGN KEY (tree) REFERENCES gtree(id) ON DELETE NO ACTION'
+p13
+sS'ntips'
+p14
+S'INT'
+p15
+sS'snode'
+p16
+S'INT, INDEX snode__idx (snode), FOREIGN KEY (snode) REFERENCES snode(id) ON DELETE NO ACTION'
+p17
+sS'label'
+p18
+S'VARCHAR(128)'
+p19
+sS'parent_id'
+p20
+S'INT'
+p21
+sS'istip'
+p22
+S'CHAR(1)'
+p23
+sS'stree'
+p24
+S'INT, INDEX stree__idx (stree), FOREIGN KEY (stree) REFERENCES stree(id) ON DELETE NO ACTION'
+p25
+sS'age_min'
+p26
+S'DOUBLE'
+p27
+sS'length'
+p28
+S'DOUBLE'
+p29
+sS'next'
+p30
+S'INT'
+p31
+sS'id'
+p32
+S'INT AUTO_INCREMENT NOT NULL'
+p33
+s.

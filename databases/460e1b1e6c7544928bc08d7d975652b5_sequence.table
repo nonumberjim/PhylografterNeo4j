@@ -1,0 +1,22 @@
+(dp1
+S'gbac'
+p2
+S'CHAR(512)'
+p3
+sS'gene'
+p4
+S'INTEGER REFERENCES gene(id) ON DELETE NO ACTION'
+p5
+sS'data'
+p6
+S'TEXT'
+p7
+sS'id'
+p8
+S'INTEGER PRIMARY KEY AUTOINCREMENT'
+p9
+sS'otu'
+p10
+S'INTEGER REFERENCES otu(id) ON DELETE NO ACTION'
+p11
+s.

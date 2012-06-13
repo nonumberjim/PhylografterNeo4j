@@ -1,0 +1,48 @@
+.labelSearchInput {
+    margin: 0px auto 0px auto !important;
+    padding: 5px 0px 5px 5px;
+    height: 12px !important;
+    text-align: left;
+    color: black;
+    width: 100% !important;
+}
+
+.initialLabelInput {
+    color: grey;
+    text-align: center;
+}
+
+.searchSelected {
+    cursor: pointer;
+    background-color: #EAEAEA;
+    font-weight: bold;
+}
+
+.noLabels { padding-top: 10px; }
+
+.searchMatchingLabels {
+    position: absolute;
+    display: none;
+    text-align: center;
+    border-left: 1px solid #CEE8F0;
+    border-right: 1px solid #CEE8F0;
+    border-bottom: 1px solid #CEE8F0;
+    border-top: 1px solid #CEE8F0;
+    max-height: 100px;
+    overflow: auto;
+}
+
+.searchContainer {
+    position: relative;
+}
+
+.searcResultTaxonLabel {
+    font-style: italic;
+    color: gray;
+}
+
+.searchResultLabelLabel {
+    font-style: italic;
+    color: gray;
+    padding-left: 10px;
+}

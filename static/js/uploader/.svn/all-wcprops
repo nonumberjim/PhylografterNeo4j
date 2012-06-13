@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/620/branches/v2-dev/static/js/uploader
+END
+loading.gif
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/620/branches/v2-dev/static/js/uploader/loading.gif
+END
+fileuploader.css
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/620/branches/v2-dev/static/js/uploader/fileuploader.css
+END
+fileuploader.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/620/branches/v2-dev/static/js/uploader/fileuploader.js
+END
+demo.htm
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/620/branches/v2-dev/static/js/uploader/demo.htm
+END
+do-nothing.htm
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/620/branches/v2-dev/static/js/uploader/do-nothing.htm
+END

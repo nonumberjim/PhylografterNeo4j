@@ -1,0 +1,37 @@
+(dp1
+S'auth_user_id'
+p2
+(dp3
+S'type'
+p4
+S'reference auth_user'
+p5
+sS'sortable'
+p6
+I2
+sS'sql'
+p7
+S'INT, INDEX auth_user_id__idx (auth_user_id), FOREIGN KEY (auth_user_id) REFERENCES auth_user(id) ON DELETE CASCADE'
+p8
+ssS'id'
+p9
+(dp10
+g4
+g9
+sg6
+I1
+sg7
+S'INT AUTO_INCREMENT NOT NULL'
+p11
+ssS'unique_user_id'
+p12
+(dp13
+g4
+S'reference unique_user'
+p14
+sg6
+I3
+sg7
+S'INT, INDEX unique_user_id__idx (unique_user_id), FOREIGN KEY (unique_user_id) REFERENCES unique_user(id) ON DELETE CASCADE'
+p15
+ss.

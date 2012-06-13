@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/jquery-ui
+END
+jquery-ui.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/jquery-ui/jquery-ui.css
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/jquery-ui/LICENSE
+END
+jquery-ui.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/524/branches/v2-dev/static/d3/lib/jquery-ui/jquery-ui.min.js
+END

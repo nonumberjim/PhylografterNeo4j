@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/502/branches/v2-dev/static/DataTables-1.8.1
+END
+license-gpl2.txt
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/501/branches/v2-dev/static/DataTables-1.8.1/license-gpl2.txt
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/501/branches/v2-dev/static/DataTables-1.8.1/.gitignore
+END
+license-bsd.txt
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/501/branches/v2-dev/static/DataTables-1.8.1/license-bsd.txt
+END
+Readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/501/branches/v2-dev/static/DataTables-1.8.1/Readme.txt
+END

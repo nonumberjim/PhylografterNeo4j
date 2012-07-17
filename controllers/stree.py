@@ -10,6 +10,15 @@ import build
 import link
 import ivy
 import treeUtil
+import re
+import time
+import os, types, string
+import imp
+from tokenize import generate_tokens
+from cStringIO import StringIO
+from neo4j import GraphDatabase
+
+
 ## ivy = local_import("ivy")
 
 from gluon.storage import Storage
@@ -38,7 +47,10 @@ def index():
         @virtualsettings(label='Focal Clade')
         def clade(self):
             study = t[self.stree.id].study
-            return db.study[study].focal_clade.name
+            fc = db.study[study].focal_clade
+            name = fc.name if fc else ""
+            return name
+            
 
         @virtualsettings(label='OTUs')
         def ntax(self):
@@ -100,10 +112,9 @@ def _study_otus(study):
     return db(q).select(db.otu.ALL)
 
 def _insert_stree(study, data):
-    """
-    given form submission data, insert a source tree
-    """
-    root = ivy.tree.read(data.newick)
+    ##given form submission data, insert a source tree
+    
+    """root = ivy.tree.read(data.newick)
     assert root, data.newick
     ivy.tree.index(root)
     nodes = list(root)
@@ -163,10 +174,133 @@ def _insert_stree(study, data):
         n.label = str(n.id)
         n.length = None
     db.stree[stree].update_record(newick_idstr=root.write())
-    return stree
+    return stree"""
+
+    try:
+        datey = time.strftime( "%Y%m%d" )
+        ##print 'Remember this code for search: ' + datey
+
+
+        db = GraphDatabase('C:\Documents and Settings\Guest\Desktop\Test')
+        ##print 'Your input is ' + data.newick
+    except:
+        print "Unexpected error:", sys.exc_info()[0]
+        raise
+
+    """newickstring = StringIO(data.newick)
+
+    STRING = 1
+    stringdata = list(token[STRING] for token
+         in generate_tokens(newickstring.readline)
+         if token[STRING])
+
+    exists = db.node.indexes.exists('tree')
+
+    if exists == 0:
+        with db.transaction:
+            tree_idx = db.node.indexes.create('tree')
+
+    elif exists == 1:
+        tree_idx = db.node.indexes.get('tree')
+
+    ##i is counter
+    i=0
+    value = stringdata[i]
+    nextvalue = stringdata[i+1]
+
+    ##print value
+    ##print nextvalue
+
+    first = 0
+    mynodelist=[]
+    with db.transaction:
+        node = db.node()
+        root = db.node(name="Root")
+        root['date'] = nowdate  
+        root['uID'] = newID
+        relationship = root.is_root(node)
+        ID = root.id
+
+    ##print ID
+
+    lp = 0
+    rp = 0
+
+    for i in range(0, len(stringdata)):
+        if value == '(':
+            first+=1
+            lp += 1
+            with db.transaction:
+                newnode = db.node()
+                relationship = newnode.has_parent(node)
+                ##print node
+                node = newnode
+                ##print newnode
+        elif value == ')':
+            rp += 1
+            if i==len(stringdata)-1:
+                continue
+            else:
+                check = stringdata[i+1]
+                if re.match("^[A-Za-z]*$", check):
+                    with db.transaction:
+                        for rel in newnode.has_parent.outgoing:
+                            ##print node
+                            node = rel.end
+                            node['label']=check           
+                else:
+                    with db.transaction:
+                        for rel in newnode.has_parent.outgoing:
+                            ##print node
+                            node = rel.end
+                            ##print node
+        elif value == ',':
+            with db.transaction:
+                for rel in node.has_parent.outgoing:
+                    node = rel.end
+                    ##print node
+        elif value == ';':
+            break
+        elif value == ':':
+           ## print stringdata[i+1]
+            branchlength = float(stringdata[i+1])
+            with db.transaction:
+                node['length'] = branchlength
+        else:
+            try:
+                float(value)               
+            except ValueError:
+                if lp == rp:
+                    continue
+                elif oldvalue == ')':
+                    continue
+                else:
+                    if first == 1:
+                        with db.transaction:
+                            node['label']=value
+                            ##print node
+                            ##print value
+                            first += 1
+                    else:
+                        with db.transaction:
+                            newnode = db.node()
+                            relationship = newnode.has_parent(node)
+                            mynodelist.append(db.node(name=value))
+                            newnode['label']=value
+                            node = newnode
+                            ##print newnode
+                            ##print value                
+        if i <= len(stringdata)-2:
+            nextvalue = stringdata[i+1]
+        i+=1
+        oldvalue = value
+        value = nextvalue"""
+
+    ##db.shutdown()
 
 #@auth.requires_membership('contributor')
 @auth.requires_login()
+
 def create():
     study = db.study(request.args(0)) or redirect(URL("index"))
     def w(f,v):
@@ -259,7 +393,7 @@ def getNodeInfo():
 
 def v():
     rec = db.stree(request.args(0) or 0)
-    study = db.study(rec.study)
+    study = db.study(rec.study) 
     u = URL(c="study",f="view",args=[study.id])
     study = A(_study_rep(study), _href=u, _target="_blank")
     wscale = float(request.vars.wscale or 0.9)

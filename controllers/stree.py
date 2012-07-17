@@ -3,9 +3,9 @@
 ## build = local_import("build", reload=True)
 ## link = local_import("link")
 import sys
-sys.path.append('/Users/cbaron/Desktop/web2py/applications/phylografter/modules')
-sys.path.append('/Users/cbaron/Desktop/web2py/applications/phylografter/modules/ivy')
-import tree
+#sys.path.append('/Users/cbaron/Desktop/web2py/applications/phylografter/modules')
+#sys.path.append('/Users/cbaron/Desktop/web2py/applications/phylografter/modules/ivy')
+from ivy import tree
 import build
 import link
 import ivy

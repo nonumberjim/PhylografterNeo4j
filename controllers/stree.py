@@ -176,16 +176,11 @@ def _insert_stree(study, data):
     db.stree[stree].update_record(newick_idstr=root.write())
     return stree"""
 
-    try:
-        datey = time.strftime( "%Y%m%d" )
-        ##print 'Remember this code for search: ' + datey
-
-
-        db = GraphDatabase('C:\Documents and Settings\Guest\Desktop\Test')
-        ##print 'Your input is ' + data.newick
-    except:
-        print "Unexpected error:", sys.exc_info()[0]
-        raise
+    import jpype
+    jpype.attachThreadToJVM()
+    #use os.curdir for directory
+    db = GraphDatabase( '/Users/cbaron/Desktop/Test' )
+    return
 
     """newickstring = StringIO(data.newick)
 
